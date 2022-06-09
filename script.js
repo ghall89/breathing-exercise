@@ -28,10 +28,12 @@ const countdown = num => {
 			countdown(nextNum);
 		} else if (!nextNum && num === 0) {
 			clearInterval(interval);
+			startBtn.disabled = false;
 		}
 	}, 1000);
 };
 
 const exercise = () => {
+	startBtn.disabled = true;
 	countdown(4);
 };
