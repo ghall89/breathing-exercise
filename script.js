@@ -2,6 +2,8 @@ const instructEl = document.querySelector('#instruction');
 const countdownEl = document.querySelector('#countdown');
 const startBtn = document.querySelector('#start');
 
+let count = 5;
+
 const countdown = num => {
 	countdownEl.innerText = num;
 	let nextNum;
@@ -26,9 +28,13 @@ const countdown = num => {
 		if (nextNum && num === 0) {
 			clearInterval(interval);
 			countdown(nextNum);
-		} else if (!nextNum && num === 0) {
+		} else if (!nextNum && num === 0 && count === 0) {
 			clearInterval(interval);
 			startBtn.disabled = false;
+		} else if (!nextNum && num === 0 && count > 0) {
+			clearInterval(interval);
+			count--;
+			countdown(4);
 		}
 	}, 1000);
 };
