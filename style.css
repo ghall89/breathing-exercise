@@ -1,0 +1,54 @@
+#circle {
+	height: 40px;
+	width: 40px;
+	background: blue;
+	border-radius: 50%;
+}
+
+.inhale {
+	animation: inhale 4s ease-in-out forwards;
+}
+
+.hold {
+	animation: hold 3.5s ease-in-out infinite forwards;
+}
+
+.exhale {
+	animation: exhale 8s ease-in-out forwards;
+}
+
+@keyframes inhale {
+	0% {
+		scale: 1;
+	}
+	100% {
+		scale: 1.5;
+	}
+}
+
+@keyframes hold {
+	0% {
+		scale: 1.5;
+	}
+	10% {
+		scale: 1.5;
+	}
+	60% {
+		scale: 1.6;
+	}
+	90% {
+		scale: 1.5;
+	}
+	100% {
+		scale: 1.5;
+	}
+}
+
+@keyframes exhale {
+	0% {
+		scale: 1.5;
+	}
+	100% {
+		scale: 1;
+	}
+}
