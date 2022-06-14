@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+* {
+	font-family: 'Quicksand', sans-serif;
+}
+
 body {
 	font-family: sans-serif;
 	background: #39464f;
@@ -27,9 +33,11 @@ button:active {
 }
 
 .ui {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
 	text-align: center;
-	margin-top: 50%;
-	transform: translateY(-50%);
 }
 
 #instruction {
