@@ -1,4 +1,5 @@
 const startBtn = document.querySelector('#start');
+const stopBtn = document.querySelector('#stop');
 
 let count = 5;
 
@@ -34,8 +35,7 @@ const countdown = num => {
 			clearInterval(interval);
 			countdown(nextNum);
 		} else if (!nextNum && num === 0 && count === 0) {
-			clearInterval(interval);
-			startBtn.disabled = false;
+			stop();
 		} else if (!nextNum && num === 0 && count > 0) {
 			clearInterval(interval);
 			count--;
@@ -45,6 +45,11 @@ const countdown = num => {
 };
 
 const exercise = () => {
-	startBtn.disabled = true;
+	startBtn.style.display = 'none';
+	stopBtn.style.display = 'inline';
 	countdown(4);
+};
+
+const stop = () => {
+	location.reload();
 };
